@@ -1,0 +1,32 @@
+#modal {
+  display: none;
+}
+#modal.open {
+  display: flex;
+}
+/*  */
+#workSpace {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 2.5%;
+}
+
+.rome1 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.rome2 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.rome3 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.rome4 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.rome5 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.rome6 {
+  grid-template-columns: repeat(5, 1fr);
+}
