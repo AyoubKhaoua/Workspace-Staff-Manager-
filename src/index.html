@@ -39,6 +39,7 @@
                 </div>
               </div>
             </div>
+            <div class="workerList"></div>
             <!-- author profils -->
           </div>
           <div
@@ -48,67 +49,103 @@
           </div>
         </nav>
       </aside>
-      <!-- these image -->
+      <!-- these imageRéception → uniquement les Réceptionnistes
+Salle des serveurs → uniquement les Techniciens IT
+Salle de sécurité → uniquement les Agents de sécurité
+Manager → peut être affecté partout
+Nettoyage → peut être affecté partout sauf à la Salle d’archives
+Autres rôles → accès libre sauf aux zones restreintes -->
+
       <div class="h-full w-[80%]" id="workSpace">
-        <div class="rome1 bg-amber-500">
-          <div class="worker">hjgjg</div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
+        <div class="Salle-conférence bg-amber-500">
+          <h1 class="w-full bg-amber-50 font-bold text-center">
+            Salle de conférence
+          </h1>
+          <div class="rome1 bg-amber-500">
+            <div class="worker bg-amber-300">a</div>
+            <div class="worker bg-amber-300">a</div>
+            <div class="worker bg-amber-300">a</div>
+            <div class="worker bg-amber-300">a</div>
+            <div class="worker bg-amber-300">aa</div>
+            <div class="worker bg-amber-300">a</div>
+          </div>
         </div>
-        <div class="rome2 bg-amber-500">
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
+        <div class="Ralle-personnel bg-amber-500">
+          <h1 class="w-full bg-amber-50 font-bold text-center">
+            Salle du personnel
+          </h1>
+          <div class="rome2 bg-amber-500">
+            <div class="worker bg-amber-700">a</div>
+            <div class="worker bg-amber-700">a</div>
+            <div class="worker bg-amber-700">aa</div>
+            <div class="worker bg-amber-700">a</div>
+            <div class="worker bg-amber-700">a</div>
+            <div class="worker bg-amber-700">a</div>
+            <div class="worker bg-amber-700">a</div>
+            <div class="worker bg-amber-700">a</div>
+          </div>
         </div>
-        <div class="rome3 bg-amber-500">
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
+        <div class="salle-d'archives bg-amber-500">
+          <h1 class="w-full bg-amber-50 font-bold text-center">
+            salle d'archives
+          </h1>
+          <div class="rome3 bg-amber-500">
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+          </div>
         </div>
-        <div class="rome4 bg-amber-500">
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
+        <div class="salle-Réception bg-amber-500">
+          <h1 class="w-full bg-amber-50 font-bold text-center">
+            salle Réception
+          </h1>
+          <div class="rome4 bg-amber-500">
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+          </div>
         </div>
-        <div class="rome5 bg-amber-500">
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
+        <div class="Salle-serveurs bg-amber-500">
+          <h1 class="w-full bg-amber-50 font-bold text-center">
+            Salle des serveurs
+          </h1>
+          <div class="rome5">
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+          </div>
         </div>
-        <div class="rome6 bg-amber-500">
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
-          <div class="worker"></div>
+        <div class="Salle-sécurité bg-amber-500">
+          <h1 class="w-full bg-amber-50 font-bold text-center">
+            Salle de sécurité
+          </h1>
+          <div class="rome6">
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+            <div class="worker"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -118,7 +155,9 @@
       id="modal"
       class="fixed inset-0 bg-[#000000d7] items-center justify-center"
     >
-      <div class="bg-white w-[400px] p-6 rounded-xl shadow-lg relative">
+      <div
+        class="bg-white w-[400px] p-6 rounded-xl shadow-lg relative max-h-[90vh] overflow-y-auto"
+      >
         <!-- btn for close -->
         <button
           id="close-modal"
@@ -129,10 +168,12 @@
 
         <h2 class="text-xl font-bold mb-4 border-b-2">Add Staff Member</h2>
 
-        <form class="space-y-4">
+        <form class="space-y-4" id="form" onsubmit="validateForm(event)">
           <div>
             <label class="block text-gray-700 mb-1">Name</label>
             <input
+              id="name"
+              name="name"
               type="text"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             />
@@ -141,7 +182,7 @@
           <div>
             <label class="block text-gray-700 mb-1">Role</label>
             <select
-              name=""
+              name="roleInCompany"
               id="role"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             >
@@ -155,28 +196,86 @@
             <label class="block text-gray-700 mb-1">file</label>
 
             <input
-              type="file"
-              onchange="onFileSelected(event)"
+              name="imgUrl:1"
+              id="imgUrl"
+              type="text"
+              onchange="loadImage(event)"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             />
 
             <img
               id="myimage"
-              class="w-15 h-15 rounded-full flex mx-auto mt-4"
+              class="w-15 h-15 border-2 bg-gray-600 rounded-full flex mx-auto mt-4"
             />
           </div>
 
           <div>
             <label class="block text-gray-700 mb-1">Email</label>
             <input
+              name="email"
+              id="email"
               type="email"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             />
           </div>
+          <div>
+            <label class="block text-gray-700 mb-1">Tele</label>
+            <input
+              name="tele"
+              id="tele"
+              type="number"
+              class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
+            />
+          </div>
+          <div>
+            <button
+              type="button"
+              id="addExp"
+              class="border-2 bg-amber-500 w-[150px] rounded-2xl text-center text-white font-sans"
+              onclick="ajouterExperienc()"
+            >
+              Add Expirence
+            </button>
+            <div id="Experiences" class="bg-gray-400 rounded-2xl">
+              <div class="experienc p-4" id="0">
+                <div>
+                  <label for="">Company</label>
+                  <input
+                    type="text"
+                    id="nameCompany"
+                    class="nameCompany w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
+                  />
+                </div>
+                <div>
+                  <label for="">Role</label>
+                  <input
+                    type="text"
+                    class="role w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
+                  />
+                </div>
+                <div>
+                  <label for="">from</label>
+                  <input
+                    type="date"
+                    id="start"
+                    class="start w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
+                  />
+                </div>
+                <div>
+                  <label for="">to</label>
+                  <input
+                    type="date"
+                    id="end"
+                    class="end w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
           <button
             type="submit"
-            class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+            class="w-full bg-blue-600 text-white mt-2 py-2 rounded-lg hover:bg-blue-700"
           >
             Save
           </button>

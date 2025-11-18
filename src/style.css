@@ -8,25 +8,21 @@
 #workSpace {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  gap: 2.5%;
+  grid-template-rows: 50% 30%;
+  gap: 10px;
+  margin: 20px;
 }
 
-.rome1 {
-  grid-template-columns: repeat(3, 1fr);
-}
-.rome2 {
-  grid-template-columns: repeat(4, 1fr);
-}
-.rome3 {
-  grid-template-columns: repeat(5, 1fr);
-}
-.rome4 {
-  grid-template-columns: repeat(3, 1fr);
-}
-.rome5 {
-  grid-template-columns: repeat(4, 1fr);
-}
+.rome1,
+.rome2,
+.rome3,
+.rome4,
+.rome5,
 .rome6 {
-  grid-template-columns: repeat(5, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px;
+  gap: 10px;
+  padding: 10px;
+  margin: 10px;
 }
