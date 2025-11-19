@@ -9,6 +9,9 @@ const workerList = document.getElementById("workerList");
 const from = document.getElementById("form");
 
 let idExp = 1;
+const tableExperiences = [];
+const tabelInfoEmploye = [];
+const employes = [];
 
 ///////////
 openModal.addEventListener("click", () => {
@@ -21,12 +24,6 @@ closeModal.addEventListener("click", () => {
 function loadImage() {
   const url = document.getElementById("imgUrl").value;
   const imgTag = document.getElementById("myimage");
-
-  if (url.trim() === "") {
-    alert("Please enter a valid URL");
-    return;
-  }
-
   imgTag.src = url;
 }
 //function pour ajouter un experinece
@@ -72,24 +69,100 @@ function ajouterExperienc() {
                   </div>
     `;
 }
-//ajouter employe
-function ajouterEmploye() {}
+
 function getValuesInputs(e) {
   e.preventDefault();
   let Experiences = document.querySelectorAll(".experienc");
   Experiences.forEach((dviExp, i) => {
+    let id = i;
     let company = dviExp.querySelector(".nameCompany").value;
     let role = dviExp.querySelector(".role").value;
     let start = dviExp.querySelector(".start").value;
     let end = dviExp.querySelector(".end").value;
-    const inputs = { company, role, start, end };
-    validateInputsExp(inputs);
+    const inputs = { id, company, role, start, end };
+    tableExperiences.push(inputs);
   });
 
   let formD = new FormData(form);
   let objetData = Object.fromEntries(formD.entries());
-  validateInputs(objetData);
+  tabelInfoEmploye.push(objetData);
+  //appel fc ajouter
+  ajouterEmploye(tabelInfoEmploye, tableExperiences);
 }
-function validateInputs() {}
 
-function validateInputsExp() {}
+//ajouter employe
+function ajouterEmploye(info, Experiences) {
+  let newEmploye = {
+    id: "id" + Math.random().toString(16).slice(2),
+    name: info[0].name,
+    roleInCompany: info[0].roleInCompany,
+    email: info[0].email,
+    tele: info[0].tele,
+    img: info[0].imgUrl,
+    experiences: Experiences,
+  };
+  let employes = getData();
+  employes.push(newEmploye);
+  localStorage.setItem("employes", JSON.stringify(employes));
+}
+
+//get Data from local Storage
+function getData() {
+  let data = JSON.parse(localStorage.getItem("employes")) || [];
+  return data;
+}
+
+//affiches les employes a sideBar
+function afficheEmployes() {
+  let employes = getData();
+  let workerList = document.querySelector(".workerList");
+  employes.forEach((employe) => {
+    let divEmploye = document.createElement("div");
+    divEmploye.setAttribute(
+      "class",
+      "w-[90%] h-13 border-1 rounded-2xl ml-2 bg-white-300 flex justify-around items-center mt-2"
+    );
+    workerList.appendChild(divEmploye);
+    divEmploye.innerHTML = ` <div class="w-[50%] flex">
+                  <div class="pr-2 pt-1.5">
+                    <img
+                      src="${employe.img}"
+                      alt=""
+                      class=" w-10 h-10 rounded-full"
+                      onclick="afficheEmploye('${employe.id}')"
+                      
+                    />
+                  </div>
+                  <div class="">
+                    <p class="font-mono">${employe.name}</p>
+                    <p class="pb-2 font-light text-gray-500">${employe.roleInCompany}</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-amber-600 font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </div>`;
+  });
+}
+
+//affiches un employe
+function afficheEmploye(empID) {
+  let data = getData();
+  let emp = data.find((emp) => (emp.id = empID));
+  console.log(emp);
+}
+/* function validateInputsInfo(info) {
+  console.log(info);
+}
+
+function validateInputsExperience(Exp) {
+  console.log(Exp);
+} */
+//localStorage.clear();
+
+function initializeApp() {
+  afficheEmployes();
+}
+initializeApp();

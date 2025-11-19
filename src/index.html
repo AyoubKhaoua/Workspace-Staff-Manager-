@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="Container flex h-screen">
+    <div class="parent flex h-screen">
       <aside class="h-screen w-[20%]">
         <nav
           class="h-full flex flex-col justify-between bg-amber-50 border-1 shadow-sm"
@@ -17,9 +17,10 @@
             <h3 class="p-3 font-bold text-gray-400">
               Staff Members (Unassigned)
             </h3>
-            <div class="container">
+            <!-- list profils -->
+            <div class="workerList">
               <div
-                class="w-[90%] h-13 border-1 rounded-2xl ml-2 bg-white-300 flex justify-around items-center mt-2"
+                class="w-[90%] h-13 border rounded-2xl ml-2 bg-white-300 flex justify-around items-center mt-2"
               >
                 <div class="w-[50%] flex">
                   <div class="pr-2 pt-1.5">
@@ -27,6 +28,7 @@
                       src="./images/me.png"
                       alt=""
                       class="w-10 h-10 rounded-full"
+                      name="urlImage"
                     />
                   </div>
                   <div class="">
@@ -39,8 +41,6 @@
                 </div>
               </div>
             </div>
-            <div class="workerList"></div>
-            <!-- author profils -->
           </div>
           <div
             class="w-[90%] bg-green-500 mx-1.5 my-1.5 text-center rounded-2xl"
@@ -84,6 +84,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
             <div class="worker bg-amber-700">a</div>
             <div class="worker bg-amber-700">a</div>
           </div>
+          <button class="w-full bg-amber-50 font-bold text-center">+</button>
         </div>
         <div class="salle-d'archives bg-amber-500">
           <h1 class="w-full bg-amber-50 font-bold text-center">
@@ -107,12 +108,12 @@ Autres rôles → accès libre sauf aux zones restreintes -->
             salle Réception
           </h1>
           <div class="rome4 bg-amber-500">
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
+            <div class="worker bg-amber-800">a</div>
+            <div class="worker bg-amber-800">a</div>
+            <div class="worker bg-amber-800">a</div>
+            <div class="worker bg-amber-800">a</div>
+            <div class="worker bg-amber-800">a</div>
+            <div class="worker bg-amber-800">a</div>
           </div>
         </div>
         <div class="Salle-serveurs bg-amber-500">
@@ -150,7 +151,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal d'ajouter -->
     <div
       id="modal"
       class="fixed inset-0 bg-[#000000d7] items-center justify-center"
@@ -168,7 +169,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
 
         <h2 class="text-xl font-bold mb-4 border-b-2">Add Staff Member</h2>
 
-        <form class="space-y-4" id="form" onsubmit="validateForm(event)">
+        <form class="space-y-4" id="form" onsubmit="getValuesInputs(event)">
           <div>
             <label class="block text-gray-700 mb-1">Name</label>
             <input
@@ -193,19 +194,20 @@ Autres rôles → accès libre sauf aux zones restreintes -->
             </select>
           </div>
           <div>
-            <label class="block text-gray-700 mb-1">file</label>
+            <label class="block text-gray-700 mb-1">image</label>
 
             <input
-              name="imgUrl:1"
+              name="imgUrl"
               id="imgUrl"
               type="text"
-              onchange="loadImage(event)"
+              onchange="loadImage()"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             />
 
             <img
               id="myimage"
               class="w-15 h-15 border-2 bg-gray-600 rounded-full flex mx-auto mt-4"
+              src=""
             />
           </div>
 
@@ -282,6 +284,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
         </form>
       </div>
     </div>
+    <!-- Modal d'affiche un profile -->
     <script src="script.js"></script>
   </body>
 </html>
