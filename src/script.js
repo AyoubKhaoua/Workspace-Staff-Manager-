@@ -2,10 +2,12 @@
 let data = {};
 
 //global element
+
 const openModal = document.getElementById("open-modal");
 const closeModal = document.getElementById("close-modal");
 const closeModalWorker = document.getElementById("closeWorkerInfo");
-const modal = document.getElementById("modal");
+const modalAjouter = document.getElementById("modal");
+const workerInfoModal = document.getElementById("workerInfoModal");
 const workerList = document.getElementById("workerList");
 const from = document.getElementById("form");
 
@@ -16,13 +18,14 @@ const employes = [];
 
 ///////////modal for fourmulaire d'ajoute
 openModal.addEventListener("click", () => {
-  modal.classList.add("open");
+  modalAjouter.classList.add("open");
 });
+
 closeModal.addEventListener("click", () => {
-  modal.classList.remove("open");
+  modalAjouter.classList.remove("open");
 });
 closeModalWorker.addEventListener("click", () => {
-  document.getElementById("workerInfoModal").classList.add("hidden");
+  workerInfoModal.classList.add("hidden");
 });
 
 function loadImage() {
@@ -31,12 +34,11 @@ function loadImage() {
   imgTag.src = url;
 }
 //function pour ajouter un experinece
-function ajouterExperienc() {
+function ajouterExperienc(exp = null) {
   const Experiences = document.getElementById("Experiences");
 
   const div = document.createElement("div");
   div.setAttribute("class", "experienc p-4 border-t-4");
-  /*  div.setAttribute("id", `${idExp++}`); */
   Experiences.appendChild(div);
   div.innerHTML += `
                     <div >
@@ -72,6 +74,12 @@ function ajouterExperienc() {
                     />
                   </div>
     `;
+  if (exp) {
+    div.querySelector(".nameCompany").value = exp.company;
+    div.querySelector(".role").value = exp.role;
+    div.querySelector(".start").value = exp.start;
+    div.querySelector(".end").value = exp.end;
+  }
 }
 
 function getValuesInputs(e) {
@@ -97,7 +105,7 @@ function getValuesInputs(e) {
 //ajouter employe
 function ajouterEmploye(info, Experiences) {
   let newEmploye = {
-    id: "id" + Math.random().toString(16).slice(2),
+    id: Math.random().toString(16).slice(2),
     name: info[0].name,
     roleInCompany: info[0].roleInCompany,
     email: info[0].email,
@@ -143,7 +151,7 @@ function afficheEmployes() {
                   </div>
                 </div>
                 <div>
-                  <p class="text-amber-600 font-bold">Edit</p>
+                  <p class="edit-btn text-amber-600 font-bold"  employe-id="${employe.id}"  >Edit</p>
                 </div>
               </div>
             </div>
@@ -154,8 +162,7 @@ function afficheEmployes() {
 //find un employe
 function afficheEmploye(empID) {
   let data = getData();
-  let worker = data.find((emp) => (emp.id = empID));
-  //console.log(worker.img);
+  let worker = data.find((emp) => emp.id == empID);
   const name = document.getElementById("workerName");
   const role = document.getElementById("workerRole");
   const email = document.getElementById("workerEmail");
@@ -167,7 +174,9 @@ function afficheEmploye(empID) {
   email.textContent = worker.email;
   tele.textContent = worker.tele;
   imgUrl.src = worker.img;
+
   worker.experiences.forEach((exp) => {
+    listExperiences.innerHTML = "";
     const workerDiv = document.createElement("div");
     workerDiv.className = "bg-white p-3 rounded-lg shadow mb-2 border";
     workerDiv.innerHTML = `
@@ -178,21 +187,48 @@ function afficheEmploye(empID) {
     `;
     listExperiences.appendChild(workerDiv);
   });
-
-  document.getElementById("workerInfoModal").classList.remove("hidden");
-}
-//open work modal
-
-/* function validateInputsInfo(info) {
-  console.log(info);
+  workerInfoModal.classList.remove("hidden");
 }
 
-function validateInputsExperience(Exp) {
-  console.log(Exp);
-} */
 //localStorage.clear();
+
+function updateEmploye() {
+  const editButtons = document.querySelectorAll(".edit-btn");
+
+  editButtons.forEach((editButton) => {
+    editButton.addEventListener("click", () => {
+      const employeId = editButton.getAttribute("employe-id");
+      modalAjouter.classList.add("open");
+      openModalUpdate(employeId);
+    });
+  });
+}
+
+function openModalUpdate(editBtn) {
+  let inputName = form.querySelector("#workerName");
+  let inputRole = from.querySelector("#role");
+  let inputEmail = from.querySelector("#email");
+  let inputTele = from.querySelector("#tele");
+  let inputUrl = from.querySelector("#imgUrl");
+  let imgUrl = from.querySelector("#myimage");
+
+  let data = getData();
+
+  let updateEmp = data.filter((emp) => emp.id == editBtn);
+
+  inputName.value = updateEmp[0].name;
+  inputRole.selected = updateEmp[0].role;
+  inputEmail.value = updateEmp[0].email;
+  inputTele.value = updateEmp[0].tele;
+  inputUrl.value = updateEmp[0].img;
+  imgUrl.src = updateEmp[0].img;
+  updateEmp[0].experiences.forEach((exp) => {
+    ajouterExperienc(exp);
+  });
+}
 
 function initializeApp() {
   afficheEmployes();
+  updateEmploye();
 }
 initializeApp();
