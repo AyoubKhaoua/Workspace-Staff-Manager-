@@ -285,6 +285,67 @@ Autres rôles → accès libre sauf aux zones restreintes -->
       </div>
     </div>
     <!-- Modal d'affiche un profile -->
+    <div
+      id="workerInfoModal"
+      class="hidden fixed inset-0 bg-black/70 items-center justify-center z-50"
+    >
+      <div
+        class="bg-white w-[420px] p-6 rounded-2xl shadow-xl relative max-h-[90vh] overflow-y-auto"
+      >
+        <!-- Close Button -->
+        <button
+          id="closeWorkerInfo"
+          class="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl font-bold"
+        >
+          ×
+        </button>
+        <h2 class="text-xl font-bold mb-4 border-b pb-2 text-gray-800">
+          Informations de l’employé
+        </h2>
+
+        <!-- Photo -->
+        <div class="flex justify-center mb-4">
+          <img
+            class="w-28 h-28 rounded-full object-cover border-2 border-gray-300 shadow"
+            id="imgModal"
+          />
+        </div>
+
+        <!-- Infos -->
+        <div class="space-y-3 text-gray-700">
+          <div>
+            <p class="font-semibold">Nom :</p>
+            <p class="bg-gray-100 p-2 rounded-md" id="workerName"></p>
+          </div>
+
+          <div>
+            <p class="font-semibold">Rôle :</p>
+            <p class="bg-gray-100 p-2 rounded-md" id="workerRole"></p>
+          </div>
+
+          <div>
+            <p class="font-semibold">Email :</p>
+            <p class="bg-gray-100 p-2 rounded-md" id="workerEmail"></p>
+          </div>
+
+          <div>
+            <p class="font-semibold">Téléphone :</p>
+            <p class="bg-gray-100 p-2 rounded-md" id="workerTele"></p>
+          </div>
+
+          <!-- Experiences -->
+          <div>
+            <p class="font-semibold">Expériences :</p>
+            <div class="space-y-3 bg-gray-100 p-3 rounded-md">
+              <div
+                class="bg-white p-3 rounded-lg shadow border"
+                id="experiences"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

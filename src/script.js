@@ -4,6 +4,7 @@ let data = {};
 //global element
 const openModal = document.getElementById("open-modal");
 const closeModal = document.getElementById("close-modal");
+const closeModalWorker = document.getElementById("closeWorkerInfo");
 const modal = document.getElementById("modal");
 const workerList = document.getElementById("workerList");
 const from = document.getElementById("form");
@@ -13,12 +14,15 @@ const tableExperiences = [];
 const tabelInfoEmploye = [];
 const employes = [];
 
-///////////
+///////////modal for fourmulaire d'ajoute
 openModal.addEventListener("click", () => {
   modal.classList.add("open");
 });
 closeModal.addEventListener("click", () => {
   modal.classList.remove("open");
+});
+closeModalWorker.addEventListener("click", () => {
+  document.getElementById("workerInfoModal").classList.add("hidden");
 });
 
 function loadImage() {
@@ -32,7 +36,7 @@ function ajouterExperienc() {
 
   const div = document.createElement("div");
   div.setAttribute("class", "experienc p-4 border-t-4");
-  div.setAttribute("id", `${idExp++}`);
+  /*  div.setAttribute("id", `${idExp++}`); */
   Experiences.appendChild(div);
   div.innerHTML += `
                     <div >
@@ -147,12 +151,38 @@ function afficheEmployes() {
   });
 }
 
-//affiches un employe
+//find un employe
 function afficheEmploye(empID) {
   let data = getData();
-  let emp = data.find((emp) => (emp.id = empID));
-  console.log(emp);
+  let worker = data.find((emp) => (emp.id = empID));
+  //console.log(worker.img);
+  const name = document.getElementById("workerName");
+  const role = document.getElementById("workerRole");
+  const email = document.getElementById("workerEmail");
+  const tele = document.getElementById("workerTele");
+  const imgUrl = document.getElementById("imgModal");
+  const listExperiences = document.getElementById("experiences");
+  name.textContent = worker.name;
+  role.textContent = worker.roleInCompany;
+  email.textContent = worker.email;
+  tele.textContent = worker.tele;
+  imgUrl.src = worker.img;
+  worker.experiences.forEach((exp) => {
+    const workerDiv = document.createElement("div");
+    workerDiv.className = "bg-white p-3 rounded-lg shadow mb-2 border";
+    workerDiv.innerHTML = `
+      <p><strong>Company:</strong> ${exp.company}</p>
+      <p><strong>Role:</strong> ${exp.role}</p>
+      <p><strong>From:</strong> ${exp.start}</p>
+      <p><strong>To:</strong> ${exp.end}</p>
+    `;
+    listExperiences.appendChild(workerDiv);
+  });
+
+  document.getElementById("workerInfoModal").classList.remove("hidden");
 }
+//open work modal
+
 /* function validateInputsInfo(info) {
   console.log(info);
 }
