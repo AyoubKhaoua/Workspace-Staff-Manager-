@@ -56,100 +56,105 @@ Manager → peut être affecté partout
 Nettoyage → peut être affecté partout sauf à la Salle d’archives
 Autres rôles → accès libre sauf aux zones restreintes -->
 
-      <div class="h-full w-[80%]" id="workSpace">
-        <div class="Salle-conférence bg-amber-500">
-          <h1 class="w-full bg-amber-50 font-bold text-center">
-            Salle de conférence
-          </h1>
-          <div class="rome1 bg-amber-500">
-            <div class="worker bg-amber-300">a</div>
-            <div class="worker bg-amber-300">a</div>
-            <div class="worker bg-amber-300">a</div>
-            <div class="worker bg-amber-300">a</div>
-            <div class="worker bg-amber-300">aa</div>
-            <div class="worker bg-amber-300">a</div>
-          </div>
-        </div>
-        <div class="Ralle-personnel bg-amber-500">
-          <h1 class="w-full bg-amber-50 font-bold text-center">
-            Salle du personnel
-          </h1>
-          <div class="rome2 bg-amber-500">
-            <div class="worker bg-amber-700">a</div>
-            <div class="worker bg-amber-700">a</div>
-            <div class="worker bg-amber-700">aa</div>
-            <div class="worker bg-amber-700">a</div>
-            <div class="worker bg-amber-700">a</div>
-            <div class="worker bg-amber-700">a</div>
-            <div class="worker bg-amber-700">a</div>
-            <div class="worker bg-amber-700">a</div>
-          </div>
-          <button class="w-full bg-amber-50 font-bold text-center">+</button>
-        </div>
-        <div class="salle-d'archives bg-amber-500">
-          <h1 class="w-full bg-amber-50 font-bold text-center">
-            salle d'archives
-          </h1>
-          <div class="rome3 bg-amber-500">
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-          </div>
-        </div>
-        <div class="salle-Réception bg-amber-500">
-          <h1 class="w-full bg-amber-50 font-bold text-center">
-            salle Réception
-          </h1>
-          <div class="rome4 bg-amber-500">
-            <div class="worker bg-amber-800">a</div>
-            <div class="worker bg-amber-800">a</div>
-            <div class="worker bg-amber-800">a</div>
-            <div class="worker bg-amber-800">a</div>
-            <div class="worker bg-amber-800">a</div>
-            <div class="worker bg-amber-800">a</div>
-          </div>
-        </div>
-        <div class="Salle-serveurs bg-amber-500">
-          <h1 class="w-full bg-amber-50 font-bold text-center">
-            Salle des serveurs
-          </h1>
-          <div class="rome5">
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-          </div>
-        </div>
-        <div class="Salle-sécurité bg-amber-500">
-          <h1 class="w-full bg-amber-50 font-bold text-center">
-            Salle de sécurité
-          </h1>
-          <div class="rome6">
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-            <div class="worker"></div>
-          </div>
-        </div>
-      </div>
+<div class="h-full w-[80%] space-y-6" id="workSpace">
+
+  <!-- Salle de conférence -->
+  <div class="bg-white border border-gray-300 rounded-xl shadow-sm ">
+    <div class="flex justify-between items-center bg-gray-100 px-4 py-2 border-b border-gray-300 rounded-t-xl">
+      <h1 class="font-semibold text-gray-800">Salle de conférence</h1>
+      <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full hover:bg-blue-600 shadow" onclick="openSalleModal('salle-de-conference')">+</button>
     </div>
+
+    <div class="salle-de-conference grid grid-cols-4 gap-3 p-4" >
+      <div class="worker h-12 bg-blue-200 text-blue-900 flex items-center justify-center rounded-lg shadow border border-blue-300">A</div>
+      <div class="worker h-12 bg-blue-200 text-blue-900 flex items-center justify-center rounded-lg shadow border border-blue-300">A</div>
+      <div class="worker h-12 bg-blue-200 text-blue-900 flex items-center justify-center rounded-lg shadow border border-blue-300">A</div>
+
+    </div>
+  </div>
+
+  <!-- Salle du personnel -->
+  <div class="bg-white border border-gray-300 rounded-xl shadow-sm ">
+    <div class="flex justify-between items-center bg-gray-100 px-4 py-2 border-b border-gray-300 rounded-t-xl">
+      <h1 class="font-semibold text-gray-800">Salle du personnel</h1>
+      <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full hover:bg-blue-600 shadow" onclick="openSalleModal('Salle-du-personnel')">+</button>
+    </div>
+
+    <div class="grid grid-cols-4 gap-3 p-4 Salle-du-personnel" >
+      <div class="worker h-12 bg-purple-200 text-purple-900 flex items-center justify-center rounded-lg shadow border border-purple-300">A</div>
+      <div class="worker h-12 bg-purple-200 text-purple-900 flex items-center justify-center rounded-lg shadow border border-purple-300">A</div>
+      <div class="worker h-12 bg-purple-200 text-purple-900 flex items-center justify-center rounded-lg shadow border border-purple-300">AA</div>
+      <div class="worker h-12 bg-purple-200 text-purple-900 flex items-center justify-center rounded-lg shadow border border-purple-300">A</div>
+
+    </div>
+  </div>
+
+  <!-- Salle d'archives -->
+  <div class="bg-white border border-gray-300 rounded-xl shadow-sm ">
+    <div class="flex justify-between items-center bg-gray-100 px-4 py-2 border-b border-gray-300 rounded-t-xl">
+      <h1 class="font-semibold text-gray-800">Salle d'archives</h1>
+      <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full hover:bg-blue-600 shadow" onclick="openSalleModal('salle-d-archives')">+</button>
+    </div>
+
+    <div class="grid grid-cols-5 gap-3 p-4 salle-d-archives" >
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+
+    </div>
+  </div>
+
+  <!-- Salle Réception -->
+  <div class="bg-white border border-gray-300 rounded-xl shadow-sm Salle-de-reception">
+    <div class="flex justify-between items-center bg-gray-100 px-4 py-2 border-b border-gray-300 rounded-t-xl">
+      <h1 class="font-semibold text-gray-800">Salle Réception</h1>
+      <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full hover:bg-blue-600 shadow" onclick="openSalleModal('salle-reception')">+</button>
+    </div>
+
+    <div class="grid grid-cols-4 gap-3 p-4 salle-reception " >
+      <div class="worker h-12 bg-green-200 text-green-900 rounded-lg shadow border border-green-300 flex items-center justify-center">A</div>
+      <div class="worker h-12 bg-green-200 text-green-900 rounded-lg shadow border border-green-300 flex items-center justify-center">A</div>
+      <div class="worker h-12 bg-green-200 text-green-900 rounded-lg shadow border border-green-300 flex items-center justify-center">A</div>
+      <div class="worker h-12 bg-green-200 text-green-900 rounded-lg shadow border border-green-300 flex items-center justify-center">A</div>
+      <div class="worker h-12 bg-green-200 text-green-900 rounded-lg shadow border border-green-300 flex items-center justify-center">A</div>
+      <div class="worker h-12 bg-green-200 text-green-900 rounded-lg shadow border border-green-300 flex items-center justify-center">A</div>
+    </div>
+  </div>
+
+  <!-- Salle des serveurs -->
+  <div class="bg-white border border-gray-300 rounded-xl shadow-sm Salle-des-serveurs">
+    <div class="flex justify-between items-center bg-gray-100 px-4 py-2 border-b border-gray-300 rounded-t-xl">
+      <h1 class="font-semibold text-gray-800">Salle des serveurs</h1>
+      <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full hover:bg-blue-600 shadow" onclick="openSalleModal('salle-des-serveurs')">+</button>
+    </div>
+
+    <div class="grid grid-cols-4 gap-3 p-4 salle-des-serveurs " >
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+
+    </div>
+  </div>
+
+  <!-- Salle de sécurité -->
+  <div class="bg-white border border-gray-300 rounded-xl shadow-sm ">
+    <div class="flex justify-between items-center bg-gray-100 px-4 py-2 border-b border-gray-300 rounded-t-xl">
+      <h1 class="font-semibold text-gray-800">Salle de sécurité</h1>
+      <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full hover:bg-blue-600 shadow" onclick="openSalleModal('salle-de-securite')">+</button>
+    </div>
+
+    <div class="grid grid-cols-5 gap-3 p-4 salle-de-securite">
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+      <div class="worker h-12 bg-gray-200 rounded-lg border border-gray-300"></div>
+  
+    </div>
+  </div>
+
+</div>
+
 
     <!-- Modal d'ajouter -->
     <div
@@ -170,6 +175,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
         <h2 class="text-xl font-bold mb-4 border-b-2">Add Staff Member</h2>
 
         <form class="space-y-4" id="form" onsubmit="getValuesInputs(event)">
+           <input type="hidden" id="idEmploye" class="inputHidden">
           <div>
             <label class="block text-gray-700 mb-1">Name</label>
             <input
@@ -188,9 +194,12 @@ Autres rôles → accès libre sauf aux zones restreintes -->
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             >
               <option value=""></option>
-              <option value="Cleaning">Cleaning</option>
-              <option value="dev">dev</option>
-              <option value="devops">devops</option>
+              <option value="nettoyage">nettoyage</option>
+              <option value="manager">manager</option>
+              <option value="agent de sécurité">agent de sécurité</option>
+              <option value="technicien it">technicien it</option>
+              <option value="réceptionniste">réceptionniste</option>
+              
             </select>
           </div>
           <div>
@@ -312,6 +321,28 @@ Autres rôles → accès libre sauf aux zones restreintes -->
         </div>
       </div>
     </div>
+ 
+  <!-- Modal: Select worker to add into salle -->
+<div
+  id="salleWorkersModal"
+  class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+>
+  <div class="bg-white w-[450px] max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-xl relative">
+    
+    <!-- Close -->
+    <button
+      id="closeSalleWorkers"
+      class="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl font-bold"
+    >×</button>
+
+    <h2 id="salleTitle" class="text-xl font-bold text-center mb-4"></h2>
+
+    <!-- All workers list -->
+    <div id="salleWorkersList" class="space-y-3"></div>
+  </div>
+</div>
+
+
 
     <script src="script.js"></script>
   </body>

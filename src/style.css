@@ -5,33 +5,6 @@
   display: flex;
 }
 /*  */
-#workSpace {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50% 30%;
-  gap: 10px;
-  margin: 20px;
-}
-
-.rome1,
-.rome2,
-.rome3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50px 50px 50px;
-  gap: 10px;
-  padding: 10px;
-}
-.rome4,
-.rome5,
-.rome6 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50px 50px;
-  gap: 10px;
-  padding: 10px;
-  margin: 10px;
-}
 
 @media (max-width: 1023px) {
   #workSpace {
