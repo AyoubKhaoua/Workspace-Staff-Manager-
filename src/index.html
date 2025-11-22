@@ -19,27 +19,7 @@
             </h3>
             <!-- list profils -->
             <div class="workerList">
-              <div
-                class="w-[90%] h-13 border rounded-2xl ml-2 bg-white-300 flex justify-around items-center mt-2"
-              >
-                <div class="w-[50%] flex">
-                  <div class="pr-2 pt-1.5">
-                    <img
-                      src="./images/me.png"
-                      alt=""
-                      class="w-10 h-10 rounded-full"
-                      name="urlImage"
-                    />
-                  </div>
-                  <div class="">
-                    <p class="font-mono">name</p>
-                    <p class="pb-2 font-light text-gray-500">type</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="text-amber-600 font-bold">Edit</p>
-                </div>
-              </div>
+            
             </div>
           </div>
           <div
@@ -184,6 +164,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
               type="text"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             />
+             <p class="error-message text-red-500  mt-1 hidden" id="nameError"></p>
           </div>
 
           <div>
@@ -201,6 +182,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
               <option value="réceptionniste">réceptionniste</option>
               
             </select>
+            <p class="error-message text-red-500  mt-1 hidden" id="roleError"></p>
           </div>
           <div>
             <label class="block text-gray-700 mb-1">image</label>
@@ -212,6 +194,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
               onchange="loadImage()"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             />
+             <p class="error-message text-red-500 text-sm mt-1 hidden" id="imgError"></p>
 
             <img
               id="myimage"
@@ -228,6 +211,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
               type="email"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             />
+            <p class="error-message text-red-500 text-sm mt-1 hidden" id="emailError"></p>
           </div>
           <div>
             <label class="block text-gray-700 mb-1">Tele</label>
@@ -237,6 +221,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
               type="number"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring"
             />
+             <p class="error-message text-red-500 text-sm mt-1 hidden" id="teleError"></p>
           </div>
           <div>
             <button
@@ -248,7 +233,9 @@ Autres rôles → accès libre sauf aux zones restreintes -->
               Add Expirence
             </button>
           </div>
-          <div id="Experiences" class="bg-gray-400 rounded-2xl"></div>
+          <div id="Experiences" class="bg-gray-400 rounded-2xl">
+            <p class="expError text-red-500 text-sm mt-1 hidden"></p>
+          </div>
 
           <button
             type="submit"
@@ -322,7 +309,7 @@ Autres rôles → accès libre sauf aux zones restreintes -->
       </div>
     </div>
  
-  <!-- Modal: Select worker to add into salle -->
+  <!-- Modal select worker to add in salle -->
 <div
   id="salleWorkersModal"
   class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50"
